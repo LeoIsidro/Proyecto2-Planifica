@@ -1,0 +1,26 @@
+# Dataset folders (large files)
+HD7/
+extracted_temp/
+generations/
+
+# Python compiled files
+__pycache__/
+*.py[cod]
+
+# Gradio cache
+.gradio/
+
+# Model weights
+*.pth
+
+# Temporary output and config files
+temp_edited_seg.png
+resultado_oficina_transformada.png
+download_manifest.json
+user_decisions_log.json
+drive_page.html
+
+# IDE/Jupyter files
+.ipynb_checkpoints/
+.vscode/
+.idea/
