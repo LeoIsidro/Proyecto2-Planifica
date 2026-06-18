@@ -1,0 +1,11 @@
+.venv/
+extracted_temp/
+generations/
+HD7/
+__pycache__/
+*.pyc
+.git/
+.env
+drive_scenes.json
+download_manifest.json
+*.pdf
