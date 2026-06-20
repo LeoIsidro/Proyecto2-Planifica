@@ -9,7 +9,7 @@ services:
       - ./generations:/app/generations
     networks:
       - proxy_net
-      
+
 networks:
   proxy_net:
     external: true
