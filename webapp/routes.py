@@ -38,6 +38,19 @@ def _image_events(gen, styles):
         yield {"error": str(exc)}
 
 
+@bp.get("/device")
+def device_info():
+    """Indica si hay GPU disponible para deshabilitar la opcion en la UI.
+    ---
+    responses:
+      200:
+        description: "{gpu: bool}"
+    """
+    import torch
+
+    return jsonify({"gpu": torch.cuda.is_available()})
+
+
 @bp.get("/scenes")
 def scenes():
     """Escenas disponibles localmente para el Modo 1.

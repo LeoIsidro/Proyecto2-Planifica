@@ -1,17 +1,15 @@
+name: proyecto-2-planificacion
 services:
-  app:
+  proyecto-2-planificacion:
     build: .
-    ports:
-      - "5000:5000"
     env_file:
       - .env
     volumes:
       - ./extracted_temp:/app/extracted_temp
       - ./generations:/app/generations
-    deploy:
-      resources:
-        reservations:
-          devices:
-            - driver: nvidia
-              count: all
-              capabilities: [gpu]
+    networks:
+      - proxy_net
+      
+networks:
+  proxy_net:
+    external: true

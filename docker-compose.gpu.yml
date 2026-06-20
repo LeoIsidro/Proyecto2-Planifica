@@ -1,0 +1,9 @@
+services:
+  proyecto-2-planificacion:
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]

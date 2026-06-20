@@ -256,8 +256,21 @@ function wireGroups() {
     }));
 }
 
+async function checkDevice() {
+  try {
+    const { gpu } = await (await fetch("/api/device")).json();
+    if (!gpu) {
+      const btn = $("device-group").querySelector('[data-device="gpu"]');
+      btn.disabled = true;
+      btn.classList.add("opacity-40", "cursor-not-allowed");
+      btn.title = "Este servidor no tiene GPU";
+    }
+  } catch (e) {}
+}
+
 buildGrid();
 wireGroups();
+checkDevice();
 loadScenes();
 loadDatasets();
 $("scene-select").addEventListener("change", updatePreview);
